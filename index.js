@@ -11,6 +11,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 
+let PORT=process.env.PORT || 3000;
+
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
@@ -53,4 +55,4 @@ app.get('/delete/:id',async (req, res) => {
   // res.send(deleteUser);
 });
 
-app.listen(3000);
+app.listen(PORT);
